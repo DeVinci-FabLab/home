@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Head from '../components/head'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
@@ -19,7 +20,7 @@ export default function Home() {
             !
           </h2>
           <h3 className="text-lg md:text-xl md:leading-relaxed font-medium text-gray-600 lg:w-2/3 mx-auto">
-            Le FabLab est un lieu d'échange et de création du pôle universitaire
+            Le FabLab est un lieu d&apos;échange et de création du pôle universitaire
             Léonard de Vinci. Que vous soyez étudiant ou non, venez découvrir
             nos créations, articles et tutos !
           </h3>
@@ -60,34 +61,40 @@ export default function Home() {
               </h2>
               <p className="mt-10 text-lg leading-6 text-gray-500 text-justify">
                 Le DeVinci FabLab est une association étudiante du Pôle Léonard
-                De Vinci qui s'occupe de l'espace de fabrication situé au fond
+                De Vinci qui s&apos;occupe de l&apos;espace de fabrication situé au fond
                 du Leaning center. Le but de notre association est de vous aider
                 dans vos projets académiques comme personnels, que ce soit avec
                 des outils, des machines, des matériaux ou des formations. Nous
-                gérons ainsi le parc d'imprimante 3D qui vous permettra de
+                gérons ainsi le parc d&apos;imprimante 3D qui vous permettra de
                 réaliser toutes les pièces que vous aurez conçues, ainsi que les
                 ateliers mis à la disposition de tous où vous pourrez faire
-                votre bricolage. L'espace a les mêmes horaires d'ouverture que
-                le pôle donc n'hésitez pas à venir nous y rencontrer !
+                votre bricolage. L&apos;espace a les mêmes horaires d&apos;ouverture que
+                le pôle donc n&apos;hésitez pas à venir nous y rencontrer !
               </p>
             </div>
           </div>
           <div className="order-1 max-w-md m-auto md:m-0 md:w-full">
             <div className="items-center justify-center">
-              <img
+              <Image
                 className="rounded-lg shadow-2xl"
                 src="/photo/home_001.jpg"
+                width={500}
+                height={500}
                 alt="Banner"
               />
               <div className="grid grid-cols-2 gap-2 content-start mt-5">
-                <img
+                <Image
                   className="rounded-lg shadow-lg"
                   src="/photo/home_002.jpg"
+                  width={250}
+                  height={250}
                   alt="Banner"
                 />
-                <img
+                <Image
                   className="rounded-lg shadow-lg"
                   src="/photo/home_003.jpg"
+                  width={250}
+                  height={250}
                   alt="Banner"
                 />
               </div>

@@ -1,6 +1,7 @@
 // components/Navbar.js
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image'
 import { withRouter } from "next/router";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -32,14 +33,18 @@ const Navbar = ({ router }) => {
                   </Disclosure.Button>
                 </div>
                 <div className="flex-shrink-0 flex items-center">
-                  <img
+                  <Image
                     className="block lg:hidden h-8 w-auto"
                     src="/logo.png"
+                    width={250}
+                    height={250}
                     alt="Fablab"
                   />
-                  <img
+                  <Image
                     className="hidden lg:block h-8 w-auto"
                     src="/logoName.png"
+                    width={250}
+                    height={250}
                     alt="Fablab"
                   />
                 </div>
