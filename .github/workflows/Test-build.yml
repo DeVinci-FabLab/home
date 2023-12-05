@@ -12,11 +12,10 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Build and push (tagged version)
+      - name: Build image
         uses: docker/build-push-action@v4
         with:
           context: .
           file: ./Dockerfile
           push: false
           tags: "test:lastest"
-          
