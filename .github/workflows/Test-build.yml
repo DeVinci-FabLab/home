@@ -1,5 +1,5 @@
-name: "Docker push"
-run-name: "DockerPush : ${{ github.actor }} push '${{ github.event.head_commit.message }}' 🚀"
+name: "Front test"
+run-name: "Front test : ${{ github.actor }} push '${{ github.event.head_commit.message }}' 🚀"
 on:
   push:
 jobs:
