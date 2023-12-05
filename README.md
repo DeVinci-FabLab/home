@@ -1,7 +1,7 @@
 <div align="center">
 	<br />
 	<p>
-		<a><img src="back/defaultFiles/logo.png" width="500" alt="MyFab" /></a>
+		<a><img src="public/logoName.png" width="500" alt="MyFab" /></a>
 	</p>
 	<br />
 	<p>
