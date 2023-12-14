@@ -3,7 +3,7 @@ FROM ubuntu:23.04
 RUN apt-get update
 RUN apt-get install -y git
 
-ENV NODE_VERSION=18.13.0
+ENV NODE_VERSION=20.10.0
 RUN apt install -y curl iproute2
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 ENV NVM_DIR=/root/.nvm
