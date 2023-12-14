@@ -7,5 +7,16 @@ services:
       dockerfile: Dockerfile
     restart: always
     container_name: DVFL_home
-    ports:
-      - ${PORT_FRONT}:3000
+    expose:
+      - "3000"
+    networks:
+      network:
+        ipv4_address: ${FRONT_IP}
+
+networks:
+  network:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: ${SUBNET}
+         gateway: ${GATEWAY}
