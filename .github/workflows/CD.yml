@@ -27,7 +27,6 @@ jobs:
         with:
           context: .
           file: docker/Dockerfile
-          target: serve
           push: true
           tags: |
             ghcr.io/devinci-fablab/dvfl-home:latest
