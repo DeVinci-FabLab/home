@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   dvfl-home-dev:
     build:
