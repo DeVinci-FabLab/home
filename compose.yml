@@ -1,22 +1,33 @@
 version: "3"
 
 services:
-  front:
+  dvfl-home-dev:
     build:
       context: .
-      dockerfile: Dockerfile
-    restart: always
-    container_name: DVFL_home
-    expose:
-      - "3000"
+      dockerfile: docker/Dockerfile
+    restart: unless-stopped
+    container_name: DVFL_home_dev
+    ports:
+      - "3000:3000"
+  
+  dvfl-home-prod:
+    image: ghcr.io/devinci-fablab/dvfl-home:latest
+    restart: unless-stopped
+    deploy:
+      mode: replicated
+      replicas: 2
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.my-website.rule=Host(`devinci-fablab.fr`)'
+      - 'traefik.http.routers.my-website.entrypoints=websecure'
+      - 'traefik.http.routers.my-website.tls.certresolver=myresolver'
+      - 'traefik.http.services.my-website.loadbalancer.server.port=3000'
+      - 'com.centurylinklabs.watchtower.enable=true'
     networks:
-      network:
-        ipv4_address: ${FRONT_IP}
+      - traefik-network
 
 networks:
-  network:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: ${SUBNET}
-         gateway: ${GATEWAY}
+  traefik-network:
+    external: true

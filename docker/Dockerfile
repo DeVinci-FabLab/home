@@ -18,4 +18,4 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN npm install 
 RUN npm run build 
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start", "--port", "3000"]
