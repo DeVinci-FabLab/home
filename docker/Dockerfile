@@ -1,7 +1,7 @@
-FROM ubuntu:23.04
+FROM ubuntu:24.04
 
-RUN apt-get update
-RUN apt-get install -y git
+RUN apt update
+RUN apt install git -y
 
 ENV NODE_VERSION=20.10.0
 RUN apt install -y curl iproute2
