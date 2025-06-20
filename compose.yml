@@ -18,10 +18,10 @@ services:
       - no-new-privileges:true
     labels:
       - 'traefik.enable=true'
-      - 'traefik.http.routers.my-website.rule=Host(`devinci-fablab.fr`)'
-      - 'traefik.http.routers.my-website.entrypoints=websecure'
-      - 'traefik.http.routers.my-website.tls.certresolver=myresolver'
-      - 'traefik.http.services.my-website.loadbalancer.server.port=3000'
+      - 'traefik.http.routers.dvfl-home.rule=Host(`devinci-fablab.fr`)'
+      - 'traefik.http.routers.dvfl-home.entrypoints=websecure'
+      - 'traefik.http.routers.dvfl-home.tls.certresolver=myresolver'
+      - 'traefik.http.services.dvfl-home.loadbalancer.server.port=3000'
       - 'com.centurylinklabs.watchtower.enable=true'
     networks:
       - traefik-network
