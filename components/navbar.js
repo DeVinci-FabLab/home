@@ -11,6 +11,11 @@ const Navbar = ({ router }) => {
   const navigations = [
     { name: "Accueil", href: "/", current: pn == "/" },
     { name: "MyFab", href: "https://my.devinci-fablab.fr/", current: false },
+    {
+      name: "Documentation",
+      href: "https://docs.devinci-fablab.fr/",
+      current: false,
+    },
     //{ name: "Blog", href: "/blog", current: pn.split('/')[1] == "blog" },
   ];
 
