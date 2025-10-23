@@ -1,28 +1,27 @@
-import Image from 'next/image'
-import Head from '../components/head'
-import Navbar from '../components/navbar'
-import Footer from '../components/footer'
-
+import Image from "next/image";
+import Footer from "../components/footer";
+import Head from "../components/head";
+import Navbar from "../components/navbar";
 
 export default function Home() {
   return (
     <div>
-      <Head/>
-      <Navbar/>
+      <Head />
+      <Navbar />
       <div>
         <div className="text-center mb-20 pt-10">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
             Bienvenue sur le site du{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-500 to-blue-400 animate-gradient-x">
               {" "}
-              DeVinci FabLab{" "}
+              DeVinci Fablab{" "}
             </span>
             !
           </h2>
           <h3 className="text-lg md:text-xl md:leading-relaxed font-medium text-gray-600 lg:w-2/3 mx-auto">
-            Le FabLab est un lieu d&apos;échange et de création du pôle universitaire
-            Léonard de Vinci. Que vous soyez étudiant ou non, venez découvrir
-            nos créations, articles et tutos !
+            Le Fablab est un lieu d&apos;échange et de création du pôle
+            universitaire Léonard de Vinci. Que vous soyez étudiant ou non,
+            venez découvrir nos créations, articles et tutos !
           </h3>
         </div>
 
@@ -43,10 +42,7 @@ export default function Home() {
               loop={true}
               className="mt-5 rounded-lg mx-auto shadow-lg relative"
             >
-              <source
-                src="/video/banner.mp4"
-                type="video/mp4"
-              />
+              <source src="/video/banner.mp4" type="video/mp4" />
             </video>
           </div>
         </center>
@@ -56,20 +52,21 @@ export default function Home() {
           <div className="order-1 w-full mt-[88px] md:mt-0">
             <div className="max-w-md text-center m-auto mb-10 md:max-w-4xl md:text-left md:m-0">
               <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
-                Le DeVinci FabLab
+                Le DeVinci Fablab
                 <br /> Qui sommes nous ?
               </h2>
               <p className="mt-10 text-lg leading-6 text-gray-500 text-justify">
-                Le DeVinci FabLab est une association étudiante du Pôle Léonard
-                De Vinci qui s&apos;occupe de l&apos;espace de fabrication situé au fond
-                du Leaning center. Le but de notre association est de vous aider
-                dans vos projets académiques comme personnels, que ce soit avec
-                des outils, des machines, des matériaux ou des formations. Nous
-                gérons ainsi le parc d&apos;imprimante 3D qui vous permettra de
-                réaliser toutes les pièces que vous aurez conçues, ainsi que les
-                ateliers mis à la disposition de tous où vous pourrez faire
-                votre bricolage. L&apos;espace a les mêmes horaires d&apos;ouverture que
-                le pôle donc n&apos;hésitez pas à venir nous y rencontrer !
+                Le DeVinci Fablab est une association étudiante du Pôle Léonard
+                De Vinci qui s&apos;occupe de l&apos;espace de fabrication situé
+                au fond du Leaning center. Le but de notre association est de
+                vous aider dans vos projets académiques comme personnels, que ce
+                soit avec des outils, des machines, des matériaux ou des
+                formations. Nous gérons ainsi le parc d&apos;imprimante 3D qui
+                vous permettra de réaliser toutes les pièces que vous aurez
+                conçues, ainsi que les ateliers mis à la disposition de tous où
+                vous pourrez faire votre bricolage. L&apos;espace a les mêmes
+                horaires d&apos;ouverture que le pôle donc n&apos;hésitez pas à
+                venir nous y rencontrer !
               </p>
             </div>
           </div>
@@ -102,7 +99,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer/>
-    </div>    
-  )
+      <Footer />
+    </div>
+  );
 }

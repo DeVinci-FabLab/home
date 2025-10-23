@@ -1,17 +1,17 @@
 <div align="center">
-	<br />
-	<p>
-		<a><img src="public/logoName.png" width="500" alt="MyFab" /></a>
-	</p>
-	<br />
-	<p>
-		<a href="https://github.com/DeVinci-FabLab/home/actions"><img src="https://github.com/DeVinci-FabLab/home/actions/workflows/Test-build.yml/badge.svg" alt="Agent status" /></a>
+ <br />
+ <p>
+  <a><img src="public/logoName.png" width="500" alt="MyFab" /></a>
+ </p>
+ <br />
+ <p>
+  <a href="https://github.com/DeVinci-FabLab/home/actions"><img src="https://github.com/DeVinci-FabLab/home/actions/workflows/Test-build.yml/badge.svg" alt="Agent status" /></a>
   </p>
 </div>
 
 # DVFL-home
 
-Bonjour ! Vous vous trouvez actuellement sur le respository de l'application web de présentation du DeVinci FabLab.
+Bonjour ! Vous vous trouvez actuellement sur le respository de l'application web de présentation du DeVinci Fablab.
 
 ## Installation
 

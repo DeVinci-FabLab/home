@@ -1,10 +1,9 @@
 // components/Navbar.js
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image'
-import { withRouter } from "next/router";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import Link from "next/link";
+import { withRouter } from "next/router";
 
 const Navbar = ({ router }) => {
   const pn = router.pathname;
@@ -58,7 +57,11 @@ const Navbar = ({ router }) => {
 
                   {navigations.map((navigation, index) => {
                     return (
-                      <Link key={index} href={navigation.href} className={"flex"}>
+                      <Link
+                        key={index}
+                        href={navigation.href}
+                        className={"flex"}
+                      >
                         <p
                           className={`${
                             navigation.current
@@ -94,7 +97,6 @@ const Navbar = ({ router }) => {
                 );
               })}
             </div>
-            
           </Disclosure.Panel>
         </>
       )}
