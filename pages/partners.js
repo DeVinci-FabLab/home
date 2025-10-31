@@ -8,7 +8,7 @@ const partners = [
     name: "Alstom",
     logo: "/partners/Alstom_logo.svg",
     description:
-      "Leader mondial des solutions de mobilit� intelligentes et durables. Notre collaboration est centr�e sur l'innovation et l'excellence en ing�nierie.",
+      "Leader mondial des solutions de mobilité intelligentes et durables. Notre collaboration est centrée sur l'innovation et l'excellence en ingénierie.",
     website: "https://www.alstom.com",
   },
   {
@@ -64,42 +64,30 @@ const partners = [
 
 export default function Partners() {
   return (
-    <div className="min-h-screen bg-white">
+    <div>
       <Head
         title="Partenaires - DeVinci Fablab"
-        description="D�couvrez nos partenaires qui nous accompagnent dans nos projets d'innovation et de fabrication."
+        description="Découvrez nos partenaires qui nous accompagnent dans nos projets d'innovation et de fabrication."
       />
       <Navbar />
 
-      <main className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="page-title text-4xl md:text-5xl font-bold mb-4">
-              Nos Partenaires
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ils nous accompagnent dans nos projets dinnovation et de
+      <main>
+        <div>
+          <header>
+            <h1>Nos Partenaires</h1>
+            <p>
+              Ils nous accompagnent dans nos projets d'innovation et de
               fabrication
             </p>
-          </div>
+          </header>
 
-          {/* Partners List */}
-          <div className="partners-list">
+          <section>
             {partners.map((partner, index) => (
               <div key={index}>
-                <div
-                  className={`partner-card flex flex-col ${
-                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  } gap-0 items-stretch py-8`}
-                >
-                  {/* Logo Card - 50% width */}
-                  <div className="w-full md:w-1/2 flex items-center justify-center p-4">
-                    <div
-                      className="partner-logo-card bg-gray-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 w-full"
-                      style={{ height: "280px" }}
-                    >
-                      <div className="relative w-full h-full p-8">
+                <article data-index={index}>
+                  <figure>
+                    <div>
+                      <div>
                         <Image
                           src={partner.logo}
                           alt={`${partner.name} logo`}
@@ -108,33 +96,24 @@ export default function Partners() {
                         />
                       </div>
                     </div>
-                  </div>
+                  </figure>
 
-                  {/* Content - 50% width */}
-                  <div className="w-full md:w-1/2 flex flex-col justify-center p-4 space-y-4">
-                    <h2 className="partner-title text-3xl md:text-4xl font-bold">
-                      {partner.name}
-                    </h2>
-                    <p className="text-lg text-gray-700 leading-relaxed text-justify">
-                      {partner.description}
-                    </p>
+                  <div>
+                    <h2>{partner.name}</h2>
+                    <p>{partner.description}</p>
                     <a
                       href={partner.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="partner-link inline-block font-medium underline transition-colors"
                     >
                       Visiter le site
                     </a>
                   </div>
-                </div>
-                {/* Separator */}
-                {index < partners.length - 1 && (
-                  <div className="partner-separator"></div>
-                )}
+                </article>
+                {index < partners.length - 1 && <hr />}
               </div>
             ))}
-          </div>
+          </section>
         </div>
       </main>
 

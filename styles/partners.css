@@ -1,4 +1,4 @@
-/* Partners Page Styles */
+/* Partners Page Styles - Pure CSS Selectors */
 :root {
   --fab-blue: #0896b5;
   --fab-magenta: #d41a5f;
@@ -19,98 +19,6 @@
     #cd3976,
     var(--fab-magenta)
   );
-}
-
-/* Fade in animation for partner cards */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.partner-card {
-  animation: fadeInUp 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-/* Logo card styling */
-.partner-logo-card {
-  transition: all 0.3s ease;
-}
-
-.partner-logo-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 50px rgba(8, 150, 181, 0.15);
-}
-
-/* Separator between partners */
-.partner-separator {
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--fab-blue) 10%,
-    var(--fab-purple) 30%,
-    var(--fab-magenta) 50%,
-    var(--fab-purple) 70%,
-    var(--fab-blue) 90%,
-    transparent 100%
-  );
-  margin: 2rem auto;
-  max-width: 100%;
-  opacity: 0.65;
-}
-
-/* Link styling with gradient */
-.partner-link {
-  position: relative;
-  color: var(--fab-blue);
-  transition: color 0.3s ease;
-}
-
-.partner-link::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--fab-gradient);
-  transition: width 0.3s ease;
-}
-
-.partner-link:hover {
-  color: var(--fab-magenta);
-}
-
-.partner-link:hover::after {
-  width: 100%;
-}
-
-/* Gradient text for titles - sized to text only */
-.partner-title {
-  background: var(--fab-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 100% 100%;
-  display: inline-block;
-  width: fit-content;
-}
-
-/* Page title gradient */
-.page-title {
-  background: var(--fab-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 100% 100%;
-  display: inline-block;
 }
 
 /* Smooth scroll behavior */
@@ -134,4 +42,247 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   opacity: 0.8;
+}
+
+/* Main container - replaces min-h-screen bg-white */
+body > div {
+  min-height: 100vh;
+  background-color: white;
+}
+
+/* Main element - replaces pt-24 pb-16 */
+main {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+/* Container - replaces max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 */
+main > div {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  main > div {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  main > div {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Header - replaces text-center mb-16 */
+main > div > header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Page title h1 - replaces text-4xl md:text-5xl font-bold mb-4 + gradient */
+main > div > header > h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: var(--fab-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 100% 100%;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  main > div > header > h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Header paragraph - replaces text-xl text-gray-600 max-w-3xl mx-auto */
+main > div > header > p {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Fade in animation for partner cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Article (partner card) - replaces flex flex-col gap-0 items-stretch py-8 */
+section article {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: stretch;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Odd articles (index 0, 2, 4...) - md:flex-row */
+@media (min-width: 768px) {
+  section > div:nth-child(odd) > article {
+    flex-direction: row;
+  }
+}
+
+/* Even articles (index 1, 3, 5...) - md:flex-row-reverse */
+@media (min-width: 768px) {
+  section > div:nth-child(even) > article {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Figure container - replaces w-full md:w-1/2 flex items-center justify-center p-4 */
+article > figure {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  article > figure {
+    width: 50%;
+  }
+}
+
+/* Figure > div (logo card container) - replaces bg-gray-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 w-full */
+article > figure > div {
+  background-color: #f3f4f6;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  height: 280px;
+  transition: all 0.3s ease;
+}
+
+article > figure > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(8, 150, 181, 0.15);
+}
+
+/* Figure > div > div (image wrapper) - replaces relative w-full h-full p-8 */
+article > figure > div > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
+
+/* Content container - replaces w-full md:w-1/2 flex flex-col justify-center p-4 space-y-4 */
+article > div:last-child {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+article > div:last-child > * + * {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  article > div:last-child {
+    width: 50%;
+  }
+}
+
+/* Partner title h2 - replaces text-3xl md:text-4xl font-bold + gradient */
+article h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  background: var(--fab-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 100% 100%;
+  display: inline-block;
+  width: fit-content;
+}
+
+@media (min-width: 768px) {
+  article h2 {
+    font-size: 2.25rem;
+  }
+}
+
+/* Partner description - replaces text-lg text-gray-700 leading-relaxed text-justify */
+article p {
+  font-size: 1.125rem;
+  color: #374151;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+/* Partner link - replaces inline-block font-medium underline transition-colors */
+article a {
+  display: inline-block;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+  position: relative;
+  color: var(--fab-blue);
+}
+
+article a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--fab-gradient);
+  transition: width 0.3s ease;
+}
+
+article a:hover {
+  color: var(--fab-magenta);
+}
+
+article a:hover::after {
+  width: 100%;
+}
+
+/* Separator (hr) - replaces partner-separator */
+section hr {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--fab-blue) 10%,
+    var(--fab-purple) 30%,
+    var(--fab-magenta) 50%,
+    var(--fab-purple) 70%,
+    var(--fab-blue) 90%,
+    transparent 100%
+  );
+  margin: 2rem auto;
+  max-width: 100%;
+  opacity: 0.65;
+  border: none;
 }
