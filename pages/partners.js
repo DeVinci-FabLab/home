@@ -5,60 +5,32 @@ import Navbar from "../components/navbar";
 
 const partners = [
   {
-    name: "Alstom",
-    logo: "/partners/Alstom_logo.svg",
-    description:
-      "Leader mondial des solutions de mobilité intelligentes et durables. Notre collaboration est centrée sur l'innovation et l'excellence en ingénierie.",
-    website: "https://www.alstom.com",
-  },
-  {
-    name: "RS Components",
+    name: "RS France",
     logo: "/partners/RS.svg",
     description:
-      "RS accompagne nos besoins de prototypage et de production avec des composants fiables et une livraison rapide pour nos projets.",
+      "RS France est un fournisseur mondial de fournitures industrielles. Nous les remercions de nous accompagner sur nos projets en nous fournissant des composants fiables.",
     website: "https://fr.rs-online.com",
   },
   {
-    name: "Igus",
-    logo: "/partners/Igus.svg",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    website: "https://www.igus.fr",
-  },
-  {
-    name: "Faulhaber",
-    logo: "/partners/faulhaber.svg",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    website: "https://www.faulhaber.com",
-  },
-  {
-    name: "Gotronic",
+    name: "Go Tronic",
     logo: "/partners/Gotronic.svg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      "Go Tronic est un distributeur de composants électroniques et de solutions d'automatisation. Nous les remercions de leur soutien dans nos projets.",
     website: "https://www.gotronic.fr",
   },
   {
-    name: "Aisler",
-    logo: "/partners/Aisler.svg",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-    website: "https://aisler.net",
-  },
-  {
-    name: "HDS",
+    name: "Département des Hauts-de-Seine",
     logo: "/partners/HDS.svg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
-    website: "#",
+      "Le Département des Hauts-de-Seine soutient les initiatives locales en matière d'innovation et de technologie. Nous sommes reconnaissants de leur partenariat.",
+    website: "https://www.hauts-de-seine.fr",
   },
   {
     name: "IFT",
     logo: "/partners/IFT.svg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
-    website: "#",
+      "IFT est notre service parrain au sein du Pôle Léonard de Vinci. Il est un acteur clé dans le domaine de la recherche, de la technologie et de l'innovation.",
+    website: "https://ift.devinci.fr/",
   },
 ];
 
@@ -76,14 +48,16 @@ export default function Partners() {
           <header>
             <h1>Nos Partenaires</h1>
             <p>
-              Ils nous accompagnent dans nos projets d'innovation et de
-              fabrication
+              Nous collaborons avec des partenaires de confiance pour soutenir
+              nos projets et initiatives. Découvrez ceux qui nous accompagnent
+              dans notre aventure.
             </p>
           </header>
 
           <section>
             {partners.map((partner, index) => (
               <div key={index}>
+                <hr />
                 <article data-index={index}>
                   <figure>
                     <div>
@@ -110,7 +84,6 @@ export default function Partners() {
                     </a>
                   </div>
                 </article>
-                {index < partners.length - 1 && <hr />}
               </div>
             ))}
           </section>
