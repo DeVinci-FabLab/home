@@ -91,12 +91,15 @@ export default function Partners() {
                 <div
                   className={`partner-card flex flex-col ${
                     index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  } gap-8 items-center py-12`}
+                  } gap-0 items-stretch py-8`}
                 >
-                  {/* Logo Box */}
-                  <div className="w-full md:w-1/2 flex justify-center">
-                    <div className="partner-logo-card bg-white rounded-2xl p-10 w-full max-w-md flex items-center justify-center min-h-[280px] shadow-lg border border-gray-100">
-                      <div className="relative w-full h-48">
+                  {/* Logo Card - 50% width */}
+                  <div className="w-full md:w-1/2 flex items-center justify-center p-4">
+                    <div
+                      className="partner-logo-card bg-gray-100 rounded-2xl flex items-center justify-center shadow-sm border border-gray-200 w-full"
+                      style={{ height: "280px" }}
+                    >
+                      <div className="relative w-full h-full p-8">
                         <Image
                           src={partner.logo}
                           alt={`${partner.name} logo`}
@@ -107,12 +110,12 @@ export default function Partners() {
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="w-full md:w-1/2 space-y-4">
+                  {/* Content - 50% width */}
+                  <div className="w-full md:w-1/2 flex flex-col justify-center p-4 space-y-4">
                     <h2 className="partner-title text-3xl md:text-4xl font-bold">
                       {partner.name}
                     </h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
+                    <p className="text-lg text-gray-700 leading-relaxed text-justify">
                       {partner.description}
                     </p>
                     <a
