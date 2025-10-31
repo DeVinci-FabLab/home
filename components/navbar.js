@@ -9,6 +9,11 @@ const Navbar = ({ router }) => {
   const pn = router.pathname;
   const navigations = [
     { name: "Accueil", href: "/", current: pn == "/" },
+    {
+      name: "Partenaires",
+      href: "/partners",
+      current: pn == "/partners",
+    },
     { name: "MyFab", href: "https://my.devinci-fablab.fr/", current: false },
     {
       name: "Documentation",
