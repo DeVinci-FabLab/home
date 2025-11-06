@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useEffect } from "react";
 import Footer from "../components/footer";
 import Head from "../components/head";
 import Navbar from "../components/navbar";
@@ -35,6 +36,13 @@ const partners = [
 ];
 
 export default function Partners() {
+  useEffect(() => {
+    document.body.classList.add("partners-page");
+    return () => {
+      document.body.classList.remove("partners-page");
+    };
+  }, []);
+
   return (
     <div>
       <Head
