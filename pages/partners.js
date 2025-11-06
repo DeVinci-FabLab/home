@@ -38,7 +38,7 @@ export default function Partners() {
   return (
     <div>
       <Head
-        title="Partenaires - DeVinci Fablab"
+        title="DeVinci Fablab - Nos Partenaires"
         description="Découvrez nos partenaires qui nous accompagnent dans nos projets d'innovation et de fabrication."
       />
       <Navbar />
