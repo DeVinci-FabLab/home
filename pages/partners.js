@@ -4,22 +4,25 @@ import Footer from "../components/footer";
 import Head from "../components/head";
 import Navbar from "../components/navbar";
 
-const partners = [
+export const partners = [
   {
+    id: "rs-france",
     name: "RS France",
     logo: "/partners/RS.svg",
     description:
-      "RS France est un fournisseur mondial de fournitures industrielles. Nous les remercions de nous accompagner sur nos projets en nous fournissant des composants fiables.",
+      "RS France est un fournisseur mondial de fournitures industrielles. Nous les remercions pour leur accompagnement sur nos projets en nous fournissant des composants fiables.",
     website: "https://fr.rs-online.com",
   },
   {
-    name: "Go Tronic",
-    logo: "/partners/Gotronic.svg",
+    id: "gotronic",
+    name: "GoTronic",
+    logo: "/partners/GoTronic.svg",
     description:
-      "Go Tronic est un distributeur de composants électroniques et de solutions d'automatisation. Nous les remercions de leur soutien dans nos projets.",
+      "GoTronic est un distributeur de composants électroniques et de solutions d'automatisation. Grâce à leur soutien, nous pouvons développer des projets au sein de notre association.",
     website: "https://www.gotronic.fr",
   },
   {
+    id: "hauts-de-seine",
     name: "Département des Hauts-de-Seine",
     logo: "/partners/HDS.svg",
     description:
@@ -27,10 +30,11 @@ const partners = [
     website: "https://www.hauts-de-seine.fr",
   },
   {
-    name: "IFT",
+    id: "ift",
+    name: "IFT (Pôle Léonard de Vinci)",
     logo: "/partners/IFT.svg",
     description:
-      "IFT est notre service parrain au sein du Pôle Léonard de Vinci. Il est un acteur clé dans le domaine de la recherche, de la technologie et de l'innovation.",
+      "IFT est notre service parrain au sein du Pôle Léonard de Vinci. C'est un acteur clé dans le domaine de la recherche, de la technologie et de l'innovation.",
     website: "https://ift.devinci.fr/",
   },
 ];
@@ -72,7 +76,7 @@ export default function Partners() {
                       <div>
                         <Image
                           src={partner.logo}
-                          alt={`${partner.name} logo`}
+                          alt={`Logo ${partner.name}`}
                           fill
                           style={{ objectFit: "contain" }}
                         />
