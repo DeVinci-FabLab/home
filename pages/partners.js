@@ -75,7 +75,7 @@ export default function Partners() {
       />
       <Navbar />
 
-      <main>
+      <main id="partners-main">
         <div>
           <header>
             <h1>Nos Partenaires</h1>
