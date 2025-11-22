@@ -4,6 +4,12 @@ import Footer from "../components/footer";
 import Head from "../components/head";
 import Navbar from "../components/navbar";
 
+function sortPartners(a, b) {
+  if (a.endYear === null && b.endYear !== null) return -1;
+  if (a.endYear !== null && b.endYear === null) return 1;
+  return 0;
+}
+
 export const partners = [
   {
     id: "rs-france",
@@ -45,7 +51,7 @@ export const partners = [
       "Le Département des Hauts-de-Seine soutient les initiatives locales en matière d'innovation et de technologie. Nous sommes reconnaissants de leur partenariat.",
     website: "https://www.hauts-de-seine.fr",
   },
-];
+].sort(sortPartners);
 
 export default function Partners() {
   useEffect(() => {
