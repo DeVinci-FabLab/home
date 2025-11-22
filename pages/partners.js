@@ -9,6 +9,8 @@ export const partners = [
     id: "rs-france",
     name: "RS France",
     logo: "/partners/RS.svg",
+    startYear: 2024,
+    endYear: 2025,
     description:
       "RS France est un fournisseur mondial de fournitures industrielles. Nous les remercions pour leur accompagnement sur nos projets en nous fournissant des composants fiables.",
     website: "https://fr.rs-online.com",
@@ -17,6 +19,8 @@ export const partners = [
     id: "gotronic",
     name: "GoTronic",
     logo: "/partners/GoTronic.svg",
+    startYear: 2024,
+    endYear: 2025,
     description:
       "GoTronic est un distributeur de composants électroniques et de solutions d'automatisation. Grâce à leur soutien, nous pouvons développer des projets au sein de notre association.",
     website: "https://www.gotronic.fr",
@@ -25,14 +29,18 @@ export const partners = [
     id: "hauts-de-seine",
     name: "Département des Hauts-de-Seine",
     logo: "/partners/HDS.svg",
+    startYear: 2015,
+    endYear: null,
     description:
       "Le Département des Hauts-de-Seine soutient les initiatives locales en matière d'innovation et de technologie. Nous sommes reconnaissants de leur partenariat.",
     website: "https://www.hauts-de-seine.fr",
   },
   {
     id: "ift",
-    name: "IFT (Pôle Léonard de Vinci)",
+    name: "Institut of Future Technologies (ancien DVIC)",
     logo: "/partners/IFT.svg",
+    startYear: 2015,
+    endYear: null,
     description:
       "IFT est notre service parrain au sein du Pôle Léonard de Vinci. C'est un acteur clé dans le domaine de la recherche, de la technologie et de l'innovation.",
     website: "https://ift.devinci.fr/",
