@@ -33,12 +33,12 @@ export const partners = [
   },
   {
     id: "ift",
-    name: "Institut of Future Technologies (ancien DVIC)",
+    name: "IFT (ancien DVIC)",
     logo: "/partners/IFT.svg",
     startYear: 2015,
     endYear: null,
     description:
-      "IFT est notre service parrain au sein du Pôle Léonard de Vinci. C'est un acteur clé dans le domaine de la recherche, de la technologie et de l'innovation.",
+      "L'Institut for Future Technologies (IFT) est notre service parrain au sein du Pôle Léonard de Vinci. C'est un acteur clé dans le domaine de la recherche, de la technologie et de l'innovation.",
     website: "https://ift.devinci.fr/",
   },
   {
@@ -106,8 +106,11 @@ export default function Partners() {
 
                   <div>
                     <h2>{partner.name}</h2>
-                    <p>{formatYears(partner)}</p>
-                    <p>{partner.description}</p>
+                    <p>
+                      {formatYears(partner)}
+                      <br></br>
+                      {partner.description}
+                    </p>
                     <a
                       href={partner.website}
                       target="_blank"
