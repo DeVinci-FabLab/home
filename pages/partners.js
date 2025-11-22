@@ -28,7 +28,7 @@ export const partners = [
     startYear: 2024,
     endYear: 2025,
     description:
-      "GoTronic est un distributeur de composants électroniques et de solutions d'automatisation. Grâce à leur soutien, nous pouvons développer des projets au sein de notre association.",
+      "GoTronic est un distributeur de composants électroniques et de solutions d'automatisation. Grâce à leur soutien nous pouvons donner vie à des projets au sein de notre association.",
     website: "https://www.gotronic.fr",
   },
   {
