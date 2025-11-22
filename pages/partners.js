@@ -26,16 +26,6 @@ export const partners = [
     website: "https://www.gotronic.fr",
   },
   {
-    id: "hauts-de-seine",
-    name: "Département des Hauts-de-Seine",
-    logo: "/partners/HDS.svg",
-    startYear: 2015,
-    endYear: null,
-    description:
-      "Le Département des Hauts-de-Seine soutient les initiatives locales en matière d'innovation et de technologie. Nous sommes reconnaissants de leur partenariat.",
-    website: "https://www.hauts-de-seine.fr",
-  },
-  {
     id: "ift",
     name: "Institut of Future Technologies (ancien DVIC)",
     logo: "/partners/IFT.svg",
@@ -44,6 +34,16 @@ export const partners = [
     description:
       "IFT est notre service parrain au sein du Pôle Léonard de Vinci. C'est un acteur clé dans le domaine de la recherche, de la technologie et de l'innovation.",
     website: "https://ift.devinci.fr/",
+  },
+  {
+    id: "hauts-de-seine",
+    name: "Département des Hauts-de-Seine",
+    logo: "/partners/HDS.svg",
+    startYear: 2015,
+    endYear: null,
+    description:
+      "Le Département des Hauts-de-Seine soutient les initiatives locales en matière d'innovation et de technologie. Nous sommes reconnaissants de leur partenariat.",
+    website: "https://www.hauts-de-seine.fr",
   },
 ];
 
@@ -54,6 +54,12 @@ export default function Partners() {
       document.body.classList.remove("partners-page");
     };
   }, []);
+
+  const formatYears = ({ startYear, endYear }) => {
+    if (!startYear) return "";
+    if (!endYear) return `Depuis ${startYear}`;
+    return `${startYear} - ${endYear}`;
+  };
 
   return (
     <div>
@@ -94,6 +100,7 @@ export default function Partners() {
 
                   <div>
                     <h2>{partner.name}</h2>
+                    <p>{formatYears(partner)}</p>
                     <p>{partner.description}</p>
                     <a
                       href={partner.website}
