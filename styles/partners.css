@@ -25,8 +25,8 @@ html {
 main[id="partners-main"] {
   padding-top: 6rem;
   padding-bottom: 4rem;
-  margin-left: 8rem;
-  margin-right: 8rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 
   > div {
     max-width: 80rem;
@@ -45,8 +45,8 @@ main[id="partners-main"] {
 
   @media (min-width: 1024px) {
     > div {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -276,23 +276,26 @@ main[id="partners-main"] {
   }
 
   section article {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 1.5rem;
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
   }
 
   @media (min-width: 768px) {
-    section > div:nth-child(odd) > article {
-      flex-direction: row;
+    section article {
+      grid-template-columns: minmax(260px, 1fr) minmax(320px, 1fr);
+      gap: 1.75rem;
     }
-  }
 
-  @media (min-width: 768px) {
     section > div:nth-child(even) > article {
-      flex-direction: row-reverse;
+      direction: rtl;
+    }
+
+    section > div:nth-child(even) > article > * {
+      direction: ltr;
     }
   }
 
@@ -304,12 +307,6 @@ main[id="partners-main"] {
     padding: 1rem;
   }
 
-  @media (min-width: 768px) {
-    article > figure {
-      width: 50%;
-    }
-  }
-
   article > figure > div {
     background-color: #f3f4f6;
     border-radius: 1rem;
@@ -319,7 +316,7 @@ main[id="partners-main"] {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     border: 5px solid #e5e7eb;
     width: 100%;
-    height: 180px;
+    height: 200px;
     transition: all 0.3s ease;
   }
 
@@ -338,22 +335,26 @@ main[id="partners-main"] {
     }
   }
 
-  article > div:last-child {
+  article > div {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding: 1rem;
   }
 
-  article > div:last-child > * + * + * + * {
-    margin-top: 0.5rem;
+  article > div > div {
+    width: 100%;
+    height: 200px;
+    display: grid;
+    align-items: start;
+    align-content: space-between;
   }
 
-  @media (min-width: 768px) {
-    article > div:last-child {
-      width: 50%;
-    }
+  article > div > div p {
+    margin-top: 0.2rem;
+  }
+
+  article > div > div a {
+    margin-bottom: 0.1rem;
   }
 
   article h2 {

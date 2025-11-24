@@ -43,7 +43,7 @@ export const partners = [
   },
   {
     id: "hauts-de-seine",
-    name: "Département des Hauts-de-Seine",
+    name: "Hauts-de-Seine",
     logo: "/partners/HDS.svg",
     startYear: 2015,
     endYear: null,
@@ -139,16 +139,20 @@ ${proposalProject || "Je serais ravi d'en discuter de vive voix avec l'équipe."
                       </figure>
 
                       <div>
-                        <h2>{partner.name}</h2>
-                        <h3>{formatYears(partner)}</h3>
-                        <p>{partner.description}</p>
-                        <a
-                          href={partner.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Visiter le site
-                        </a>
+                        <div>
+                          <div>
+                            <h2>{partner.name}</h2>
+                            <h3>{formatYears(partner)}</h3>
+                          </div>
+                          <p>{partner.description}</p>
+                          <a
+                            href={partner.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Visiter le site
+                          </a>
+                        </div>
                       </div>
                     </article>
                   </div>
