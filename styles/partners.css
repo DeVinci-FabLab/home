@@ -23,10 +23,10 @@ html {
 }
 
 main[id="partners-main"] {
-  padding-top: 6rem;
-  padding-bottom: 4rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
 
   > div {
     max-width: 80rem;
@@ -50,41 +50,46 @@ main[id="partners-main"] {
     }
   }
 
-  > div header {
+  header {
     text-align: center;
   }
 
-  > div header > h1 {
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+  h1,
+  article h2 {
     background: var(--fab-blue);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
     background-size: 100% 100%;
     display: inline-block;
+    font-weight: 700;
+  }
+
+  header h1 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
   }
 
   @media (min-width: 768px) {
-    > div > header > h1 {
+    header h1 {
       font-size: 3rem;
     }
   }
 
-  > div > header > p {
-    font-size: 1.25rem;
-    color: #4b5563;
+  header p {
     max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
+    font-size: 1.25rem;
+    color: #4b5563;
   }
 
   .partners-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-rows: auto 0;
     align-items: flex-start;
+    gap: 0 2rem;
   }
 
   @media (min-width: 1024px) {
@@ -104,20 +109,27 @@ main[id="partners-main"] {
     top: 6.5rem;
   }
 
+  @media (max-width: 1024px) {
+    .partners-cta {
+      visibility: hidden;
+    }
+  }
+
   .partners-cta-card {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 1.75rem;
+    border-radius: 1.25rem;
     background: linear-gradient(140deg, #0c7894 0%, #125b7b 100%);
     color: #ffffff;
-    border-radius: 1.25rem;
-    padding: 1.5rem 1.75rem;
     box-shadow: 0 12px 28px rgba(8, 150, 181, 0.18);
-    overflow: hidden;
-    position: relative;
   }
 
   .partners-cta-card::after {
     content: "";
     position: absolute;
     inset: 0;
+    pointer-events: none;
     background: radial-gradient(
         circle at 20% 20%,
         rgba(255, 255, 255, 0.2),
@@ -128,20 +140,19 @@ main[id="partners-main"] {
         rgba(255, 255, 255, 0.2),
         transparent 35%
       );
-    pointer-events: none;
   }
 
   .partners-cta-kicker {
+    margin-bottom: 0.35rem;
+    font-size: 0.8rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-size: 0.8rem;
     opacity: 0.85;
-    margin-bottom: 0.35rem;
   }
 
   .partners-cta-card h3 {
-    font-size: 1.5rem;
     margin: 0.1rem 0 0.5rem;
+    font-size: 1.5rem;
   }
 
   .partners-cta-card p {
@@ -168,40 +179,29 @@ main[id="partners-main"] {
     box-shadow: 0 14px 35px rgba(8, 150, 181, 0.25);
   }
 
-  @media (max-width: 1023px) {
-    .partners-cta {
-      position: relative;
-      top: 0;
-    }
-
-    .partners-cta-card {
-      text-align: center;
-    }
-  }
-
   .partners-mail-section {
     margin-top: 1rem;
   }
 
   .partners-mail-card {
-    background: linear-gradient(135deg, #f8fafc 0%, #eef5ff 100%);
+    padding: 1.75rem;
     border: 1px solid #e5e7eb;
     border-radius: 1.25rem;
-    padding: 1.75rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef5ff 100%);
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
   }
 
   .partners-mail-kicker {
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-size: 0.85rem;
     color: #0c7894;
-    margin-bottom: 0.35rem;
   }
 
   .partners-mail-card h3 {
-    font-size: 1.75rem;
     margin: 0 0 0.65rem;
+    font-size: 1.75rem;
     color: #0f172a;
   }
 
@@ -211,31 +211,31 @@ main[id="partners-main"] {
   }
 
   .partners-mail-card form {
-    margin-top: 1.25rem;
     display: grid;
     gap: 0.75rem;
+    margin-top: 1.25rem;
   }
 
   .partners-mail-card label {
+    font-size: 0.95rem;
     font-weight: 700;
     color: #0f172a;
-    font-size: 0.95rem;
   }
 
   .partners-mail-card input,
   .partners-mail-card textarea {
     width: 100%;
-    border-radius: 0.75rem;
-    border: 1px solid #d1d5db;
     padding: 0.9rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
     font-size: 1rem;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
   .partners-mail-card textarea {
-    resize: vertical;
     min-height: 140px;
+    resize: vertical;
   }
 
   .partners-mail-card input:focus,
@@ -246,21 +246,21 @@ main[id="partners-main"] {
   }
 
   .partners-form-error {
-    color: var(--fab-magenta);
-    font-weight: 600;
     margin: 0.2rem 0;
+    font-weight: 600;
+    color: var(--fab-magenta);
   }
 
   .partners-mail-submit {
+    padding: 0.9rem 1rem;
     border: none;
-    cursor: pointer;
+    border-radius: 0.75rem;
     background: linear-gradient(90deg, var(--fab-gradient));
     color: #ffffff;
-    border-radius: 0.75rem;
-    padding: 0.9rem 1rem;
     font-weight: 700;
     letter-spacing: 0.01em;
     box-shadow: 0 14px 35px rgba(8, 150, 181, 0.2);
+    cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
@@ -271,8 +271,8 @@ main[id="partners-main"] {
 
   .partners-mail-note {
     margin-top: 0.75rem;
-    color: #475569;
     font-size: 0.95rem;
+    color: #475569;
   }
 
   section article {
@@ -280,8 +280,8 @@ main[id="partners-main"] {
     grid-template-columns: 1fr;
     align-items: center;
     gap: 1.5rem;
-    animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
   }
 
   @media (min-width: 768px) {
@@ -300,23 +300,23 @@ main[id="partners-main"] {
   }
 
   article > figure {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     padding: 1rem;
   }
 
   article > figure > div {
-    background-color: #f3f4f6;
-    border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    border: 5px solid #e5e7eb;
     width: 100%;
     height: 200px;
+    border: 5px solid #e5e7eb;
+    border-radius: 1rem;
+    background-color: #f3f4f6;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
   }
 
@@ -336,17 +336,17 @@ main[id="partners-main"] {
   }
 
   article > div {
-    width: 100%;
     display: flex;
+    width: 100%;
     padding: 1rem;
   }
 
   article > div > div {
-    width: 100%;
-    height: 200px;
     display: grid;
     align-items: start;
     align-content: space-between;
+    width: 100%;
+    height: 200px;
   }
 
   article > div > div p {
@@ -359,20 +359,7 @@ main[id="partners-main"] {
 
   article h2 {
     font-size: 25px;
-    font-weight: 700;
-    background: var(--fab-blue);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 100% 100%;
-    display: inline-block;
     width: fit-content;
-  }
-
-  section > div:nth-child(odd) article h2 {
-    background: var(--fab-blue);
-    background-clip: text;
-    background-size: 100% 100%;
   }
 
   @media (min-width: 768px) {
@@ -383,25 +370,25 @@ main[id="partners-main"] {
 
   article p {
     font-size: 16px;
-    color: #374151;
     line-height: 1.6;
+    color: #374151;
     text-align: justify;
   }
 
   article a {
+    position: relative;
     display: inline-block;
     font-weight: 500;
+    color: var(--fab-blue);
     text-decoration: underline dotted;
     transition: color 0.3s ease;
-    position: relative;
-    color: var(--fab-blue);
   }
 
   article a::after {
     content: "";
     position: absolute;
-    bottom: 1.5px;
     left: 0;
+    bottom: 1.5px;
     width: 0;
     height: 2px;
     background: linear-gradient(90deg, var(--fab-gradient));
@@ -425,7 +412,11 @@ main[id="partners-main"] {
   }
 
   section hr {
+    max-width: 100%;
     height: 0.165rem;
+    margin: 2rem auto;
+    border: none;
+    opacity: 0.65;
     background: linear-gradient(
       90deg,
       transparent 0%,
@@ -436,9 +427,5 @@ main[id="partners-main"] {
       var(--fab-blue) 90%,
       transparent 100%
     );
-    margin: 2rem auto;
-    max-width: 100%;
-    opacity: 0.65;
-    border: none;
   }
 }
