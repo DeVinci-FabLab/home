@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../components/footer";
 import Head from "../components/head";
 import Navbar from "../components/navbar";
@@ -54,6 +54,10 @@ export const partners = [
 ].sort(sortPartners);
 
 export default function Partners() {
+  const [proposalEmail, setProposalEmail] = useState("");
+  const [proposalProject, setProposalProject] = useState("");
+  const [formError, setFormError] = useState("");
+
   useEffect(() => {
     document.body.classList.add("partners-page");
     return () => {
@@ -67,6 +71,34 @@ export default function Partners() {
     return `${startYear} - ${endYear}`;
   };
 
+  const handleProposalSubmit = (event) => {
+    event.preventDefault();
+    if (!proposalEmail.trim()) {
+      setFormError(
+        "Merci d'indiquer un email pour que nous puissions vous répondre."
+      );
+      return;
+    }
+
+    setFormError("");
+    const subject = encodeURIComponent(
+      "Proposition de partenariat - DeVinci Fablab"
+    );
+    const body = encodeURIComponent(
+      `Bonjour,
+
+Je souhaite vous transmettre mon projet de partenariat.
+
+Email de contact : ${proposalEmail}
+
+Description du projet :
+${proposalProject || "Je serais ravi d'en discuter de vive voix avec l'équipe."}
+`
+    );
+
+    window.location.href = `mailto:fablab@devinci.fr?subject=${subject}&body=${body}`;
+  };
+
   return (
     <div>
       <Head
@@ -77,52 +109,128 @@ export default function Partners() {
 
       <main id="partners-main">
         <div>
-          <header>
-            <h1>Nos Partenaires</h1>
-            <p>
-              Nous collaborons avec des partenaires de confiance pour soutenir
-              nos projets et initiatives. Découvrez ceux qui nous accompagnent
-              dans notre aventure.
-            </p>
-          </header>
+          <div className="partners-layout">
+            <div className="partners-body">
+              <header>
+                <h1>Nos Partenaires</h1>
+                <p>
+                  Nous collaborons avec des partenaires de confiance pour
+                  soutenir nos projets et initiatives. Découvrez ceux qui nous
+                  accompagnent dans notre aventure.
+                </p>
+              </header>
 
-          <section>
-            {partners.map((partner, index) => (
-              <div key={index}>
-                <hr />
-                <article data-index={index}>
-                  <figure>
-                    <div>
+              <section>
+                {partners.map((partner, index) => (
+                  <div key={index}>
+                    <hr />
+                    <article data-index={index}>
+                      <figure>
+                        <div>
+                          <div>
+                            <Image
+                              src={partner.logo}
+                              alt={`Logo ${partner.name}`}
+                              fill
+                              style={{ objectFit: "contain" }}
+                            />
+                          </div>
+                        </div>
+                      </figure>
+
                       <div>
-                        <Image
-                          src={partner.logo}
-                          alt={`Logo ${partner.name}`}
-                          fill
-                          style={{ objectFit: "contain" }}
-                        />
+                        <h2>{partner.name}</h2>
+                        <p>
+                          {formatYears(partner)}
+                          <br></br>
+                          {partner.description}
+                        </p>
+                        <a
+                          href={partner.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visiter le site
+                        </a>
                       </div>
-                    </div>
-                  </figure>
-
-                  <div>
-                    <h2>{partner.name}</h2>
-                    <p>
-                      {formatYears(partner)}
-                      <br></br>
-                      {partner.description}
-                    </p>
-                    <a
-                      href={partner.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visiter le site
-                    </a>
+                    </article>
                   </div>
-                </article>
+                ))}
+              </section>
+
+              <section
+                id="partnership-mail"
+                className="partners-mail-section"
+                aria-labelledby="partners-mail-title"
+              >
+                <div className="partners-mail-card">
+                  <div>
+                    <p className="partners-mail-kicker">
+                      Proposer un partenariat
+                    </p>
+                    <h3 id="partners-mail-title">Envoyez-nous votre projet</h3>
+                    <p>
+                      Laissez-nous votre email et une brève description ; nous
+                      vous recontactons pour co-construire votre partenariat
+                      avec le DeVinci Fablab.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleProposalSubmit}>
+                    <label htmlFor="proposal-email">Votre email</label>
+                    <input
+                      id="proposal-email"
+                      type="email"
+                      name="proposal-email"
+                      placeholder="vous@email.com"
+                      value={proposalEmail}
+                      onChange={(event) => setProposalEmail(event.target.value)}
+                      required
+                    />
+
+                    <label htmlFor="proposal-message">
+                      Votre projet de partenariat
+                    </label>
+                    <textarea
+                      id="proposal-message"
+                      name="proposal-message"
+                      rows={5}
+                      placeholder="Objectifs, publics visés, ressources..."
+                      value={proposalProject}
+                      onChange={(event) =>
+                        setProposalProject(event.target.value)
+                      }
+                    />
+
+                    {formError && (
+                      <p className="partners-form-error">{formError}</p>
+                    )}
+
+                    <button type="submit" className="partners-mail-submit">
+                      Envoyer mon projet
+                    </button>
+                  </form>
+                  <p className="partners-mail-note">
+                    Nous vous répondons généralement sous 72h ouvrées.
+                  </p>
+                </div>
+              </section>
+            </div>
+
+            <aside className="partners-cta">
+              <div className="partners-cta-card">
+                <p className="partners-cta-kicker">Collaboration</p>
+                <h3>Un projet en tête ?</h3>
+                <p>
+                  Déposez vos coordonnées pour recevoir un retour rapide de
+                  l&#39;équipe partenariats.
+                </p>
+                <a className="partners-cta-button" href="#partnership-mail">
+                  Envoyer mon projet
+                </a>
               </div>
-            ))}
-          </section>
+            </aside>
+          </div>
         </div>
       </main>
 

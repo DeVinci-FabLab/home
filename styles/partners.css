@@ -80,6 +80,201 @@ main[id="partners-main"] {
     margin-right: auto;
   }
 
+  .partners-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 1024px) {
+    .partners-layout {
+      grid-template-columns: minmax(0, 3fr) minmax(260px, 1fr);
+    }
+  }
+
+  .partners-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .partners-cta {
+    position: sticky;
+    top: 6.5rem;
+  }
+
+  .partners-cta-card {
+    background: linear-gradient(140deg, #0c7894 0%, #0f3f5a 100%);
+    color: #ffffff;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    box-shadow: 0 20px 45px rgba(8, 150, 181, 0.2);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .partners-cta-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at 20% 20%,
+        rgba(255, 255, 255, 0.2),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 80% 0%,
+        rgba(255, 255, 255, 0.2),
+        transparent 35%
+      );
+    pointer-events: none;
+  }
+
+  .partners-cta-kicker {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    opacity: 0.85;
+    margin-bottom: 0.35rem;
+  }
+
+  .partners-cta-card h3 {
+    font-size: 1.5rem;
+    margin: 0.1rem 0 0.5rem;
+  }
+
+  .partners-cta-card p {
+    margin: 0.25rem 0 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .partners-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    color: #0f3f5a;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .partners-cta-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 35px rgba(8, 150, 181, 0.25);
+  }
+
+  @media (max-width: 1023px) {
+    .partners-cta {
+      position: relative;
+      top: 0;
+    }
+
+    .partners-cta-card {
+      text-align: center;
+    }
+  }
+
+  .partners-mail-section {
+    margin-top: 1rem;
+  }
+
+  .partners-mail-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #eef5ff 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+  }
+
+  .partners-mail-kicker {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: #0c7894;
+    margin-bottom: 0.35rem;
+  }
+
+  .partners-mail-card h3 {
+    font-size: 1.75rem;
+    margin: 0 0 0.65rem;
+    color: #0f172a;
+  }
+
+  .partners-mail-card p {
+    margin: 0.25rem 0 0;
+    color: #334155;
+  }
+
+  .partners-mail-card form {
+    margin-top: 1.25rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .partners-mail-card label {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 0.95rem;
+  }
+
+  .partners-mail-card input,
+  .partners-mail-card textarea {
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid #d1d5db;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: inherit;
+  }
+
+  .partners-mail-card textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  .partners-mail-card input:focus,
+  .partners-mail-card textarea:focus {
+    outline: none;
+    border-color: var(--fab-blue);
+    box-shadow: 0 0 0 3px rgba(8, 150, 181, 0.2);
+  }
+
+  .partners-form-error {
+    color: var(--fab-magenta);
+    font-weight: 600;
+    margin: 0.2rem 0;
+  }
+
+  .partners-mail-submit {
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, var(--fab-gradient));
+    color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 0.9rem 1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    box-shadow: 0 14px 35px rgba(8, 150, 181, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .partners-mail-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 40px rgba(8, 150, 181, 0.25);
+  }
+
+  .partners-mail-note {
+    margin-top: 0.75rem;
+    color: #475569;
+    font-size: 0.95rem;
+  }
+
   section article {
     display: flex;
     flex-direction: column;
