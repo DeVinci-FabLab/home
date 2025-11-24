@@ -141,7 +141,7 @@ ${proposalProject || "Je serais ravi d'en discuter de vive voix avec l'équipe."
                       <div>
                         <h2>{partner.name}</h2>
                         <p>
-                          {formatYears(partner)}
+                          <b>{formatYears(partner)}</b>
                           <br></br>
                           {partner.description}
                         </p>
