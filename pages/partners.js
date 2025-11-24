@@ -140,11 +140,8 @@ ${proposalProject || "Je serais ravi d'en discuter de vive voix avec l'équipe."
 
                       <div>
                         <h2>{partner.name}</h2>
-                        <p>
-                          <b>{formatYears(partner)}</b>
-                          <br></br>
-                          {partner.description}
-                        </p>
+                        <h3>{formatYears(partner)}</h3>
+                        <p>{partner.description}</p>
                         <a
                           href={partner.website}
                           target="_blank"

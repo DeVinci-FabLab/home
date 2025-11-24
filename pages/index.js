@@ -10,14 +10,14 @@ export default function Home() {
       <Navbar />
       <div>
         <div className="text-center mb-20 pt-10">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+          <h1 className="text-3xl md:text-4xl font-extrabold mb-4">
             Bienvenue sur le site du{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-500 to-blue-400 animate-gradient-x">
               {" "}
               DeVinci Fablab{" "}
             </span>
             !
-          </h2>
+          </h1>
           <h3 className="text-lg md:text-xl md:leading-relaxed font-medium text-gray-600 lg:w-2/3 mx-auto">
             Le Fablab est un lieu d&apos;échange et de création du pôle
             universitaire Léonard de Vinci. Que vous soyez étudiant ou non,

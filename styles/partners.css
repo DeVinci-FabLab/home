@@ -346,7 +346,7 @@ main[id="partners-main"] {
     padding: 1rem;
   }
 
-  article > div:last-child > * + * + * {
+  article > div:last-child > * + * + * + * {
     margin-top: 0.5rem;
   }
 
