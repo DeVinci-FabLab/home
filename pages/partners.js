@@ -115,9 +115,9 @@ ${proposalProject || "Je serais ravi d'en discuter de vive voix avec l'équipe."
                 <h1>Nos Partenaires</h1>
                 <p>
                   Nous collaborons avec des partenaires de confiance pour
-                  soutenir nos projets et initiatives. Découvrez ceux qui nous
-                  accompagnent dans notre aventure.
+                  soutenir nos projets et initiatives.
                 </p>
+                <p>Découvrez ceux qui nous accompagnent dans notre aventure.</p>
               </header>
 
               <section>
