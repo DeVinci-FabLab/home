@@ -120,6 +120,20 @@ ${proposalProject || "Je serais ravi d'en discuter de vive voix avec l'équipe."
                 <p>Découvrez ceux qui nous accompagnent dans notre aventure.</p>
               </header>
 
+              <a className="partners-scroll-cta" href="#partnership-mail">
+                <div>
+                  <p className="partners-scroll-kicker">Collaboration</p>
+                  <h3>Un projet en tête ?</h3>
+                  <p>
+                    Déposez vos coordonnées pour recevoir un retour rapide de
+                    l&#39;équipe partenariats.
+                  </p>
+                </div>
+                <span className="partners-scroll-pill">
+                  Aller au formulaire
+                </span>
+              </a>
+
               <section>
                 {partners.map((partner, index) => (
                   <div key={index}>
@@ -217,20 +231,6 @@ ${proposalProject || "Je serais ravi d'en discuter de vive voix avec l'équipe."
                 </div>
               </section>
             </div>
-
-            <aside className="partners-cta">
-              <div className="partners-cta-card">
-                <p className="partners-cta-kicker">Collaboration</p>
-                <h3>Un projet en tête ?</h3>
-                <p>
-                  Déposez vos coordonnées pour recevoir un retour rapide de
-                  l&#39;équipe partenariats.
-                </p>
-                <a className="partners-cta-button" href="#partnership-mail">
-                  Envoyer mon projet
-                </a>
-              </div>
-            </aside>
           </div>
         </div>
       </main>

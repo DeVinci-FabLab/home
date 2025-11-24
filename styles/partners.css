@@ -28,8 +28,8 @@ html {
 }
 
 main[id="partners-main"] {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
 
@@ -37,12 +37,27 @@ main[id="partners-main"] {
     max-width: 80rem;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    > div {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    > div {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 
   header {
     text-align: center;
+    margin-bottom: 1rem;
   }
 
   h1,
@@ -68,7 +83,6 @@ main[id="partners-main"] {
   }
 
   header p {
-    max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
     font-size: 1.25rem;
@@ -76,17 +90,9 @@ main[id="partners-main"] {
   }
 
   .partners-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 0;
-    align-items: flex-start;
-    gap: 0 2rem;
-  }
-
-  @media (min-width: 1024px) {
-    .partners-layout {
-      grid-template-columns: minmax(0, 3fr) minmax(260px, 1fr);
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
 
   .partners-body {
@@ -95,79 +101,57 @@ main[id="partners-main"] {
     gap: 1rem;
   }
 
-  .partners-cta {
-    position: sticky;
-    top: 6.5rem;
-  }
-
-  @media (max-width: 1024px) {
-    .partners-cta {
-      visibility: hidden;
-    }
-  }
-
-  .partners-cta-card {
+  .partners-scroll-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     position: relative;
     overflow: hidden;
-    padding: 1.5rem 1.75rem;
-    border-radius: 1.25rem;
-    background: linear-gradient(140deg, #0c7894 0%, #125b7b 100%);
-    color: #ffffff;
-    box-shadow: 0 12px 28px rgba(8, 150, 181, 0.18);
+    padding: 1.25rem 1.5rem;
+    border: 1px solid #dbeafe;
+    border-radius: 1.1rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ecfeff 50%, #e0f2fe 100%);
+    color: #0f172a;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(15, 111, 146, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .partners-cta-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(
-        circle at 20% 20%,
-        rgba(255, 255, 255, 0.2),
-        transparent 45%
-      ),
-      radial-gradient(
-        circle at 80% 0%,
-        rgba(255, 255, 255, 0.2),
-        transparent 35%
-      );
+  .partners-scroll-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(15, 111, 146, 0.16);
   }
 
-  .partners-cta-kicker {
+  .partners-scroll-cta h3 {
+    margin: 0.1rem 0 0.4rem;
+    font-size: 1.4rem;
+  }
+
+  .partners-scroll-cta p {
+    margin: 0;
+    color: #0f172a;
+  }
+
+  .partners-scroll-kicker {
     margin-bottom: 0.35rem;
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    opacity: 0.85;
+    color: #0c7894;
   }
 
-  .partners-cta-card h3 {
-    margin: 0.1rem 0 0.5rem;
-    font-size: 1.5rem;
-  }
-
-  .partners-cta-card p {
-    margin: 0.25rem 0 0.5rem;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .partners-cta-button {
+  .partners-scroll-pill {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 0.5rem;
-    padding: 0.75rem 1rem;
-    border-radius: 0.75rem;
-    background: #ffffff;
-    color: #0f3f5a;
+    padding: 0.65rem 0.9rem;
+    border-radius: 999px;
+    background: #0c7894;
+    color: #ffffff;
     font-weight: 700;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .partners-cta-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 14px 35px rgba(8, 150, 181, 0.25);
+    white-space: nowrap;
+    box-shadow: 0 10px 30px rgba(8, 150, 181, 0.2);
   }
 
   .partners-mail-section {
@@ -425,9 +409,36 @@ main[id="partners-main"] {
       margin-right: 1rem;
     }
 
+    .partners-scroll-cta {
+      padding: 1.1rem 1.2rem;
+      gap: 0.75rem;
+      text-align: left;
+    }
+
+    .partners-scroll-cta > div {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .partners-scroll-cta h3 {
+      font-size: 1.25rem;
+    }
+
+    .partners-scroll-pill {
+      width: 100%;
+      justify-content: center;
+      padding: 0.8rem 1rem;
+      font-size: 0.95rem;
+    }
+
     section article {
       grid-template-columns: 1fr;
       gap: 0;
+    }
+
+    .partners-scroll-cta {
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     article > figure > div {
