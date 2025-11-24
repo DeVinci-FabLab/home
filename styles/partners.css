@@ -105,11 +105,11 @@ main[id="partners-main"] {
   }
 
   .partners-cta-card {
-    background: linear-gradient(140deg, #0c7894 0%, #0f3f5a 100%);
+    background: linear-gradient(140deg, #0c7894 0%, #125b7b 100%);
     color: #ffffff;
     border-radius: 1.25rem;
-    padding: 1.5rem;
-    box-shadow: 0 20px 45px rgba(8, 150, 181, 0.2);
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 12px 28px rgba(8, 150, 181, 0.18);
     overflow: hidden;
     position: relative;
   }
@@ -400,7 +400,7 @@ main[id="partners-main"] {
   article a::after {
     content: "";
     position: absolute;
-    bottom: -2px;
+    bottom: 1.5px;
     left: 0;
     width: 0;
     height: 2px;
