@@ -120,19 +120,30 @@ ${proposalProject || "Je serais ravi d'en discuter de vive voix avec l'équipe."
                 <p>Découvrez ceux qui nous accompagnent dans notre aventure.</p>
               </header>
 
-              <a className="partners-scroll-cta" href="#partnership-mail">
-                <div>
-                  <p className="partners-scroll-kicker">Collaboration</p>
-                  <h3>Un projet en tête ?</h3>
-                  <p>
-                    Déposez vos coordonnées pour recevoir un retour rapide de
-                    l&#39;équipe partenariats.
-                  </p>
-                </div>
-                <span className="partners-scroll-pill">
-                  Aller au formulaire
-                </span>
-              </a>
+              <div className="partners-scroll-wrapper">
+                <a className="partners-scroll-cta" href="#partnership-mail">
+                  <div>
+                    <p className="partners-scroll-kicker">Collaboration</p>
+                    <h3>Un projet en tête ?</h3>
+                    <p>
+                      Déposez vos coordonnées pour recevoir un retour rapide de
+                      l&#39;équipe partenariats.
+                    </p>
+                  </div>
+                  <span className="partners-scroll-pill">
+                    Aller au formulaire
+                  </span>
+                </a>
+                <a
+                  className="partners-brochure"
+                  href="/partners/brochure-partenariat.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  Voir la brochure de partenariat (PDF)
+                </a>
+              </div>
 
               <section>
                 {partners.map((partner, index) => (
