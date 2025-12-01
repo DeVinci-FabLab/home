@@ -20,8 +20,9 @@ export default function Home() {
           </h1>
           <h3 className="text-lg md:text-xl md:leading-relaxed font-medium text-gray-600 lg:w-2/3 mx-auto">
             Le Fablab est un lieu d&apos;échange et de création du pôle
-            universitaire Léonard de Vinci. Que vous soyez étudiant ou non,
-            venez découvrir nos créations, articles et tutos !
+            universitaire Léonard de Vinci. Ouvert à tous les membres du pôle,
+            étudiants comme personnel, venez y découvrir nos projets, nos
+            réalisations et nos tutoriels !
           </h3>
         </div>
 
