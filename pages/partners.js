@@ -201,7 +201,7 @@ ${proposalProject || "Je serais ravi d'en discuter de vive voix avec l'équipe."
                     </p>
                     <h3 id="partners-mail-title">Envoyez-nous votre projet</h3>
                     <p>
-                      Laissez-nous votre email et une brève description ; nous
+                      Laissez-nous votre email et une brève description, nous
                       vous recontactons pour co-construire votre partenariat
                       avec le DeVinci Fablab.
                     </p>
