@@ -16,7 +16,7 @@ export const partners = [
     name: "RS France",
     logo: "/partners/RS.svg",
     startYear: 2024,
-    endYear: 2025,
+    endYear: null, 
     description:
       "RS France est un fournisseur mondial de fournitures industrielles. Nous les remercions pour leur accompagnement sur nos projets en nous fournissant des composants fiables.",
     website: "https://fr.rs-online.com",
@@ -31,6 +31,15 @@ export const partners = [
       "GoTronic est un distributeur de composants électroniques et de solutions d'automatisation. Grâce à leur soutien nous pouvons donner vie à des projets au sein de notre association.",
     website: "https://www.gotronic.fr",
   },
+  {
+    id: "stepper-online", 
+    name: "Stepper Online",
+    logo: "/partners/StepperOnline.svg",
+    startYear: 2025,
+    endYear: null,
+    description:
+      "StepperOnline est un fournisseur de moteurs pas-à-pas, servomoteurs et composants de motion control. Leur soutien nous permet d'équiper nos projets robotiques et mécatroniques.",
+    website: "https://www.omc-stepperonline.com",  },
   {
     id: "ift",
     name: "IFT (ancien DVIC)",
